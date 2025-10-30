@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Creator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 30px;
+      background-color: #f7f8fa;
+    }
+    .container {
+      width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Create a New Post</h1>
+  <div class="container">
+    <label>User ID:</label><br>
+    <input type="number" id="userId" placeholder="Enter user ID"><br>
+
+    <label>Caption (Title):</label><br>
+    <input type="text" id="caption" placeholder="Enter caption"><br>
+
+    <label>Post Content:</label><br>
+    <textarea id="postBody" rows="4" placeholder="Write your post here..."></textarea><br>
+
+    <button onclick="createPost()">Post</button>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function createPost() {
+      const userId = document.getElementById('userId').value;
+      const caption = document.getElementById('caption').value;
+      const postBody = document.getElementById('postBody').value;
+      const result = document.getElementById('result');
+
+      // Clear message
+      result.textContent = '';
+
+      if (!userId || !caption || !postBody) {
+        result.style.color = 'red';
+        result.textContent = '⚠️ Please fill in all fields.';
+        return;
+      }
+
+    }
+  </script>
+</body>
+</html>

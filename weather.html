@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Info</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+    .weather-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+    }
+    .error {
+      display: block;
+      color: red;
+    }
+    .success{
+        display:none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌦️ Weather App</h1>
+
+  <input id="cityInput" type="text" placeholder="Enter city..." />
+  <button onclick="getWeather()">Get Weather</button>
+  <p id="errorMsg" style="display:none">❌ Unable to fetch weather data</p>
+
+  <div id="weatherContainer" class="weather-card">
+    <h2 id="cityName">Your City</h2>
+    <img id="weatherIcon" src="" alt="Weather icon" width="64" />
+    <p id="weatherDesc">Weather desc</p>
+    <p><strong>Temperature:</strong> <span id="temperature">°C</span></p>
+    <p><strong>Feels like:</strong> <span id="feelslike">°C</span></p>
+    <p><strong>Humidity:</strong> <span id="humidity">0%</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
